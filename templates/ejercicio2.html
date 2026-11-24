@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2 - Comparación de nombres</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="contenedor">
+
+        <h1>Comparación de nombres</h1>
+
+        <form method="POST">
+
+            <label>Primer nombre:</label>
+            <input type="text" name="nombre1" required>
+
+            <label>Segundo nombre:</label>
+            <input type="text" name="nombre2" required>
+
+            <label>Tercer nombre:</label>
+            <input type="text" name="nombre3" required>
+
+            <button type="submit">Comparar nombres</button>
+
+        </form>
+
+        {% if nombre_mayor %}
+            <h2>Nombre más largo: {{ nombre_mayor }}</h2>
+            <h2>Cantidad de caracteres: {{ cantidad }}</h2>
+        {% endif %}
+
+        <a href="{{ url_for('inicio') }}">Volver al inicio</a>
+
+    </div>
+
+</body>
+</html>
